@@ -9,6 +9,8 @@ El objetivo es hacer una configuración que me permita programar en python, java
 [06mar2026]: Instalación de lazy para instalar plugins
 
 ## Colorscheme
+[06mar2026]: Instalación de https://github.com/catppuccin para colorear 
+Y seleccione el tema catppuccin-mocha
 
 ## Telescope
 
