@@ -5,8 +5,8 @@ El objetivo es hacer una configuración que me permita programar en python, java
 ## The init.lua file
 [06mar2026]: Primera configuración básica
 
-
 ## Lazy.nvim
+[06mar2026]: Instalación de lazy para instalar plugins
 
 ## Colorscheme
 
