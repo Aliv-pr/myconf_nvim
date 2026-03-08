@@ -13,5 +13,9 @@ El objetivo es hacer una configuración que me permita programar en python, java
 Y seleccione el tema catppuccin-mocha
 
 ## Telescope
+[07mar2026]: Instalación de https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file "telescope" es un buscador difuso con  
+leader + ff = Busca archivos 
+leader + fg = Busca una palabra en los archivos del proyecto
+
 
 ## Treesitte
