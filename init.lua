@@ -2,6 +2,10 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set rnu")
+vim.cmd("set number")
+vim.cmd("set clipboard+=unnamedplus")
+
 vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -39,3 +43,5 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin-mocha"
+
+-- hola esto es una prueba borrame 
