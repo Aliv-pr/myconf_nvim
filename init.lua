@@ -27,12 +27,19 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "nvim-telescope/telescope.nvim", version = '*',
-    dependencies = { 'nvim-lua/plenary.nvim', 
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
-    }
+  dependencies = { 'nvim-lua/plenary.nvim', 
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+  }
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate'
   }
 }
 local opts = {}
+
+-- Configuración de telescope
 
 require("lazy").setup(plugins, opts)
 local builtin = require("telescope.builtin")
@@ -41,7 +48,24 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
+-- Configuración de treesitter
+local ts = require("nvim-treesitter")
+
+ts.setup({
+  install_dir = vim.fn.stdpath("data") .. "/site"
+})
+
+ts.install({ "lua", "javascript" })
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '<filetype>' },
+  callback = function() 
+    vim.treesitter.start()
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})
+
+-- Configuración de catppuccin
+
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin-mocha"
-
--- hola esto es una prueba borrame 

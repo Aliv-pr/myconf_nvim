@@ -19,3 +19,5 @@ leader + fg = Busca una palabra en los archivos del proyecto
 
 
 ## Treesitte
+[12mar2026]: Instalación de https://github.com/nvim-treesitter/nvim-treesitter "tresitter" 
+Sirve para ressaltar y sangrar 
