@@ -21,3 +21,7 @@ leader + fg = Busca una palabra en los archivos del proyecto
 ## Treesitte
 [12mar2026]: Instalación de https://github.com/nvim-treesitter/nvim-treesitter "tresitter" 
 Sirve para ressaltar y sangrar 
+
+## neo-tree
+[12mar2026]: Instalación de https://github.com/nvim-neo-tree/neo-tree.nvim "neo-tree" que es un arbol de explorador de archivos
+y uso <leader>n para abrir y cerrar

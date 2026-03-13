@@ -25,8 +25,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  { "nvim-telescope/telescope.nvim", version = '*',
+  { "catppuccin/nvim", 
+  name = "catppuccin", 
+  priority = 1000 },
+  { "nvim-telescope/telescope.nvim", 
+  version = '*',
   dependencies = { 'nvim-lua/plenary.nvim', 
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
   }
@@ -35,6 +38,16 @@ local plugins = {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
     build = ':TSUpdate'
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons", 
+    },
+    lazy = false,
   }
 }
 local opts = {}
@@ -64,6 +77,9 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
+
+-- Configuración de neotree
+vim.keymap.set('n', '<leader>n', ':Neotree toggle<CR>')
 
 -- Configuración de catppuccin
 
