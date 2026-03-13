@@ -71,10 +71,13 @@ ts.setup({
 ts.install({ "lua", "javascript" })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '<filetype>' },
-  callback = function() 
-    vim.treesitter.start()
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  callback = function(args) 
+    local buf = args.buf
+
+    pcall(vim.treesitter.start, buf)
+    
+    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.wo[0][0].foldmethod = 'expr'
   end,
 })
 
