@@ -17,7 +17,6 @@ Y seleccione el tema catppuccin-mocha
 leader + ff = Busca archivos 
 leader + fg = Busca una palabra en los archivos del proyecto
 
-
 ## Treesitte
 [12mar2026]: Instalación de https://github.com/nvim-treesitter/nvim-treesitter "tresitter" 
 Sirve para ressaltar y sangrar 
@@ -25,3 +24,9 @@ Sirve para ressaltar y sangrar
 ## neo-tree
 [12mar2026]: Instalación de https://github.com/nvim-neo-tree/neo-tree.nvim "neo-tree" que es un arbol de explorador de archivos
 y uso <leader>n para abrir y cerrar
+
+## Modularización
+[13mar2026]: usando la estructura de carpetas que permite lazy modularizamos los plugins en la carpeta lua/plugins y las opciones en el de vim-options
+
+## lualine
+[14mar2026]: Instale el plugin de lualine para que la barra de abajo se vea bien.

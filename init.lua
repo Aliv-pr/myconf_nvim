@@ -1,13 +1,3 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set rnu")
-vim.cmd("set number")
-vim.cmd("set clipboard+=unnamedplus")
-
-vim.g.mapleader = " "
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -24,67 +14,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-  { "catppuccin/nvim", 
-  name = "catppuccin", 
-  priority = 1000 },
-  { "nvim-telescope/telescope.nvim", 
-  version = '*',
-  dependencies = { 'nvim-lua/plenary.nvim', 
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
-  }
-  },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    lazy = false,
-    build = ':TSUpdate'
-  },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", 
-    },
-    lazy = false,
-  }
-}
-local opts = {}
+require("vim-options")
+require("lazy").setup("plugins")
 
--- Configuración de telescope
-
-require("lazy").setup(plugins, opts)
-local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
--- vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
--- vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-
--- Configuración de treesitter
-local ts = require("nvim-treesitter")
-
-ts.setup({
-  install_dir = vim.fn.stdpath("data") .. "/site"
-})
-
-ts.install({ "lua", "javascript" })
-
-vim.api.nvim_create_autocmd('FileType', {
-  callback = function(args) 
-    local buf = args.buf
-
-    pcall(vim.treesitter.start, buf)
-    
-    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.wo[0][0].foldmethod = 'expr'
-  end,
-})
-
--- Configuración de neotree
-vim.keymap.set('n', '<leader>n', ':Neotree toggle<CR>')
-
--- Configuración de catppuccin
-
-require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin-mocha"
