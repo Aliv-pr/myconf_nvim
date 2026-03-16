@@ -56,3 +56,11 @@ gd – Ir a definición.
 [15mar2026]: Instale telescope-ui-select.nvim https://github.com/nvim-telescope/telescope-ui-select.nvim
 Sirve para que las ventanas de lsp y otros se vean mejor.
 
+## none-ls.lua
+[16mar2026]: Instalación de none-ls.lua https://github.com/nvimtools/none-ls.nvim
+Sirve para autocompletado, corrección de errores y estilo de formato. Para que funcione necesitamos de stylua
+> Usamos :Mason y luego buscamos /stylua
+y luego usamos i para instalarlo
+
+Usamos 
+leader + gf = da formato al codigo
