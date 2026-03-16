@@ -52,4 +52,7 @@ gd – Ir a definición.
 
 <leader>ca – Acciones de código (modo normal/visual).
 
+## Telescope-ui-select.nvim
+[15mar2026]: Instale telescope-ui-select.nvim https://github.com/nvim-telescope/telescope-ui-select.nvim
+Sirve para que las ventanas de lsp y otros se vean mejor.
 
