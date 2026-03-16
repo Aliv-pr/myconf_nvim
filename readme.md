@@ -30,3 +30,15 @@ y uso <leader>n para abrir y cerrar
 
 ## lualine
 [14mar2026]: Instale el plugin de lualine para que la barra de abajo se vea bien.
+
+## lspconfig
+[15mar2026]:
+Instale los siguentes plugins 
+- mason.nvim https://github.com/mason-org/mason.nvim
+- mason-lspconfig.nvim https://github.com/mason-org/mason-lspconfig.nvim
+- nvim-lspconfig https://github.com/neovim/nvim-lspconfig
+
+mason descarga los servidores
+mason-lspconfig conectar mason con nvim-lspconfig
+y nvim-lspconfig sirve para configurar y comunicarse con neovim
+
