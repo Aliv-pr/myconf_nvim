@@ -33,12 +33,23 @@ y uso <leader>n para abrir y cerrar
 
 ## lspconfig
 [15mar2026]:
-Instale los siguentes plugins 
-- mason.nvim https://github.com/mason-org/mason.nvim
-- mason-lspconfig.nvim https://github.com/mason-org/mason-lspconfig.nvim
-- nvim-lspconfig https://github.com/neovim/nvim-lspconfig
+### Plugins utilizados
+mason.nvim – Gestor de instalación de servidores LSP.
 
-mason descarga los servidores
-mason-lspconfig conectar mason con nvim-lspconfig
-y nvim-lspconfig sirve para configurar y comunicarse con neovim
+mason-lspconfig.nvim – Puente para instalar servidores automáticamente y vincularlos con lspconfig.
+
+nvim-lspconfig – Configuración nativa de LSP para Neovim.
+
+### Servidores instalados automáticamente
+lua_ls (Lua)
+
+ts_ls (TypeScript/JavaScript)
+
+Atajos de teclado (se activan al adjuntarse un LSP)
+K – Muestra documentación (hover).
+
+gd – Ir a definición.
+
+<leader>ca – Acciones de código (modo normal/visual).
+
 
