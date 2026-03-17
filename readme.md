@@ -58,7 +58,8 @@ Sirve para que las ventanas de lsp y otros se vean mejor.
 
 ## none-ls.lua
 [16mar2026]: Instalación de none-ls.lua https://github.com/nvimtools/none-ls.nvim
-Sirve para autocompletado, corrección de errores y estilo de formato. Para que funcione necesitamos de stylua
+Sirve para autocompletado, corrección de errores y estilo de formato. Para que funcione necesitamos instalar los analizadores usando
+
 > Usamos :Mason y luego buscamos /stylua
 y luego usamos i para instalarlo
 
