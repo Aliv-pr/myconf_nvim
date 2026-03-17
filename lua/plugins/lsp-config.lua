@@ -16,6 +16,21 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      local lspconfig = require("lspconfig")
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      require("mason-lspconfig").setup({
+        handlers = {
+          function(server_name)
+          lspconfig[server_name].setup({
+            capabilities = capabilities
+          })
+          end
+        }
+      })
+
+
+
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
           local opts = {buffer = args.buf}

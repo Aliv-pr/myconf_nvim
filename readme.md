@@ -65,3 +65,36 @@ y luego usamos i para instalarlo
 
 Usamos 
 leader + gf = da formato al codigo
+
+## autocompletado y snippet's
+[17mar2026]: Sistema de autocompletado moderno basado en LSP y snippets.
+
+### Plugins utilizados
+- nvim-cmp → Motor de autocompletado  
+- cmp-nvim-lsp → Conecta LSP con autocompletado  
+- LuaSnip → Motor de snippets  
+- cmp_luasnip → Integra snippets en el autocompletado  
+- friendly-snippets → Colección de snippets  
+
+### Atajos (autocompletado)
+
+- `<C-n>` → Siguiente sugerencia  
+- `<C-p>` → Sugerencia anterior  
+
+- `<C-b>` → Subir en la documentación  
+- `<C-f>` → Bajar en la documentación  
+
+- `<C-Space>` → Abrir autocompletado  
+- `<C-e>` → Cancelar autocompletado  
+
+- `<CR>` → Confirmar selección  
+
+- `<Tab>` → 
+  - Navega sugerencias si el menú está abierto  
+  - Expande snippet o avanza dentro de él  
+  - Inserta tab normal si no hay contexto  
+
+- `<S-Tab>` → 
+  - Navega hacia atrás en sugerencias  
+  - Retrocede en snippets
+
