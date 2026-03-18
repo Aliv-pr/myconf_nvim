@@ -98,3 +98,49 @@ leader + gf = da formato al codigo
   - Navega hacia atrás en sugerencias  
   - Retrocede en snippets
 
+## Debuggin
+[17mar2026]: Usamos varios plugins para construir el depurador 
+
+> Cada lenguaje requiere su propio adapter (no existe una configuración universal).
+
+### Plugins utilizados
+- nvim-dap → Cliente DAP (motor del debugging)  
+- nvim-dap-ui → Interfaz gráfica  
+- nvim-nio → Dependencia de dap-ui  
+- nvim-dap-go → Soporte automático para Go  
+
+### Go
+
+Usamos Delve como debugger y adapter DAP.
+
+#### Instalación (Fedora)
+```bash
+sudo dnf install delve
+```
+
+### Go
+Usamos Delve como debugger y adapter DAP.
+
+<leader>dt → Toggle breakpoint
+
+<leader>dc → Continuar
+
+<leader>di → Step into
+
+<leader>do → Step over
+
+<leader>dO → Step out
+
+<leader>dr → REPL
+
+<leader>dl → Última ejecución
+
+Uso
+
+Colocar breakpoint
+
+Ejecutar (<leader>dc)
+
+Navegar con steps
+
+
